@@ -3,7 +3,8 @@
 #include <GLFW/glfw3.h>
 #include <glm/glm.hpp>
 //held outside of the main function because it is a callback
-//c-style error callback function where 0 returns an error
+//c-style error callback function where an int value of 0 returns an error to stderr
+//and description is given the value of the glfwSetErrorCallback return
 void error_callback(int error, const char* description)
 {
 	fprintf(stderr,"Error:%s\n" ,description);
