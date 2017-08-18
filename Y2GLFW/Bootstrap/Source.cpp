@@ -1,43 +1,68 @@
-#include <cstdio>
 #include "gl_core_4_4.h"
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-//held outside of the main function because it is a callback
-//c-style error callback function where an int value of 0 returns an error to stderr
-//and description is given the value of the glfwSetErrorCallback return
-void error_callback(int error, const char* description)
-{
-	fprintf(stderr,"Error:%s\n" ,description);
-}
-
+#include <GLFW\glfw3.h>
+#include <cstdio>
+#include <glm/vec3.hpp>
+#include <glm/vec2.hpp>
+#include <cassert>
+#include <iostream>
 int main()
 {
-	//sends error info to the callback function located above the main program
-	glfwSetErrorCallback(error_callback);
+
+	
+	glm::vec3 v = glm::vec3(1, 1, 1);
+
+
 	//checks for glfw initialization
 	//if false, breaks out of program
 	if (!glfwInit())
-		return;
-	
+		printf("no glfw");
+
 	//creates a window  with the arguments being width, height, window name, fullscreen, and 
-	//some kind of pointer named share, which i guess does.... hell i don't know
-	GLFWwindow* window = glfwCreateWindow(640, 480, "test", NULL, NULL);
-	//checks if the window variable is initialized
-	//if false, breaks out of program
-	if (!window)
-		return;
-	
-	//destructs and deletes the current glfw window
-	glfwDestroyWindow(window);
-	
-	//sets the most recently initialized openGL context as the current one being used
-	//ends upon context replacement or window destruction
-	glfwMakeContextCurrent(window);
+		//some kind of pointer named share, which i guess does.... hell i don't know
+	GLFWwindow* window = glfwCreateWindow(800, 800, "test", NULL, NULL);
 
+		//checks if the window variable is initialized
+		//if false, breaks out of program
+		if (!window)
+		{
+			//terminates glfw if no window is shown
+			glfwTerminate();
+			return-2;
+		}
+		//sends an error if the window evaluates to the nullptr value;
+		assert(window != nullptr);
+		
+		//sets the most recently initialized openGL context as the current one being used
+		//ends upon context replacement or window destruction
+		glfwMakeContextCurrent(window);
 
+		if(ogl_LoadFunctions() == ogl_LOAD_FAILED)
+		{
+			glfwDestroyWindow(window);
+			glfwTerminate();
+			return -3;
+		}
 
+		auto major = ogl_GetMajorVersion;
+		auto minor = ogl_GetMinorVersion;
+		
+		printf("GL: %i.%i\n", major, minor);
+		glClearColor(0.5f, 0.5f, 1.0f, 1.0f);
+		//while loop that repeats while the window's close flag is not called
+		while (true)
+		{
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			glfwPollEvents();
+			if (glfwWindowShouldClose(window))
+				break;
+			if (glfwGetKey(window, GLFW_KEY_ESCAPE))
+				glfwSetWindowShouldClose(window, true);
+		}
 
+		//destructs and deletes the current glfw window
+		glfwDestroyWindow(window);
+		//terminates glfw
+		glfwTerminate();
 
-	glfwTerminate();
 	return 0;
 }
