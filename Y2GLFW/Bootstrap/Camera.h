@@ -14,5 +14,5 @@ using namespace glm;
 		virtual void Start() = 0;
 		virtual void Update()= 0;
 		virtual void Run() = 0;
-		mat4 lookat();
+		mat4 lookat(vec3 eye, vec3 center, vec3 up);
 	};
