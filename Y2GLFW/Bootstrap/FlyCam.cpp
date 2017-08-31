@@ -43,5 +43,4 @@ void test()
 	vec3 a = vec3(1, 2, 3);
 	vec3 b = vec3(3, 2, 1);
 	vec3 c = vec3(2, 3, 1);
-	
-}
+},
