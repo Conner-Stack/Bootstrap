@@ -68,8 +68,8 @@ int main()
 
 	//return 0;
 	mat4 glmtest = lookAt(vec3(10.0f, 10.0f, 10.0f), vec3(0.0f), vec3(0.0f, 1.0f, 0.0f));
-	Camera* testCam = nullptr;
-	mat4 functest = testCam->lookat(vec3(10.0f, 10.0f, 10.0f), vec3(0.0f), vec3(0.0f, 1.0f, 0.0f));
+	mat4 functest = testCam->Camera::lookat(vec3(10.0f, 10.0f, 10.0f), vec3(0.0f), vec3(0.0f, 1.0f, 0.0f));
+	assert(testCam != nullptr);
 	assert(glmtest == functest);
 	system("pause");
 	return 0;
