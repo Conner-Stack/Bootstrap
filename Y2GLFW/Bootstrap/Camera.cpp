@@ -11,12 +11,6 @@ Camera::~Camera()
 {
 }
 
-void Camera::Start() {}
-
-void Camera::Update() {}
-
-void Camera::Run() {}
-
 mat4 Camera::lookat(vec3 eye, vec3 center, vec3 up) {
 	vec3 f = eye - center;
 	vec3 z = normalize(f);

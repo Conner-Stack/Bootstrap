@@ -8,16 +8,12 @@ using namespace glm;
 	{
 	public:
 		Camera();
-		virtual ~Camera();
+		~Camera();
 		mat4 lookat(vec3 eye, vec3 center, vec3 up);
-		vec3 x;
-		vec3 y;
-		vec3 z;
-		mat4 translation;
-		mat4 view;
-		mat4 world;
-	protected:
-		virtual void Start() = 0;
-		virtual void Update()= 0;
-		virtual void Run() = 0;
+		vec3 m_x;
+		vec3 m_y;
+		vec3 m_z;
+		mat4 m_translation;
+		mat4 m_view;
+		mat4 m_world;
 	};
