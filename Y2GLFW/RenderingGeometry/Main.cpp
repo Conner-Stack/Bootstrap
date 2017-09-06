@@ -1,5 +1,6 @@
 #include <iostream>
 #include <glm/glm.hpp>
+#include "Application.h"
 
 using namespace glm;
 struct Vertex
@@ -21,4 +22,9 @@ void generateGrid(unsigned int rows, unsigned int cols )
 		}
 	}
 	delete[] aoVertices;
+}
+
+int main()
+{
+//	Application * app = new render
 }
