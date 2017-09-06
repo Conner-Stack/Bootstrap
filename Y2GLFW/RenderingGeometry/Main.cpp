@@ -1,6 +1,5 @@
 #include <iostream>
-#include <glm\glm.hpp>
-
+#include <glm/glm.hpp>
 
 using namespace glm;
 struct Vertex
