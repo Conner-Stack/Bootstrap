@@ -8,7 +8,7 @@ using namespace glm;
 	{
 	public:
 		Camera();
-		~Camera();
+		virtual ~Camera();
 		mat4 lookat(vec3 eye, vec3 center, vec3 up);
 		vec3 m_x;
 		vec3 m_y;
@@ -16,4 +16,5 @@ using namespace glm;
 		mat4 m_translation;
 		mat4 m_view;
 		mat4 m_world;
+		
 	};
