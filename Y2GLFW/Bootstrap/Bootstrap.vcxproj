@@ -75,6 +75,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IncludePath>$(SolutionDir)Dep\imgui;$(IncludePath);$(SolutionDir)Dep\glfw\include;$(SolutionDir)Dep</IncludePath>
     <OutDir>$(SolutionDir)Dep\bootstrap\</OutDir>
+    <LibraryPath>$(SolutionDir)Dep\bootstrap\bootstrap;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
