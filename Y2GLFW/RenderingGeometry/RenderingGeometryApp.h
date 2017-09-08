@@ -15,7 +15,7 @@ public:
 protected:
 	void startup() override;
 	void shutdown() override;
-	void update(float) override;
+	void update(float dt) override;
 	void draw() override;
 };
 
