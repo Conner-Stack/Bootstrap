@@ -4,7 +4,7 @@
 class Shader
 {
 public:
-	unsigned int m_programID;
+	
 	Shader();
 	~Shader();
 	void bind();
