@@ -2,6 +2,7 @@
 #include <glm/glm.hpp>
 #include "RenderingGeometryApp.h"
 
+
 int main()
 {
 	Application * app = new RenderingGeometryApp();
