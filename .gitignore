@@ -6,6 +6,8 @@
 *.sln.docstates
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
+*.vc.db
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
