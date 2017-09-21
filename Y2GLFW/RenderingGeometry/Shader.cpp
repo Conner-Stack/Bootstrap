@@ -64,7 +64,6 @@ void Shader::defaultLoad()
 
 
 
-
 }
 
 unsigned int Shader::getUniform(const char * value)

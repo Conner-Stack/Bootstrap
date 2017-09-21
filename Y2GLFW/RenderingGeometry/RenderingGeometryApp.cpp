@@ -10,6 +10,93 @@
 #include <glm\ext.hpp>
 
 #include "Shader.h"
+std::vector<glm::vec4>generateHalfCircle(float radius, unsigned int points)
+{
+	// will be used the store the points of a half circle
+	std::vector<glm::vec4> halfCircle = std::vector<glm::vec4>(points);
+
+	// loop per point to generate each slice
+	for (int i = 0; i < points; i++)
+	{
+		// calculate slice here
+
+		// calculate theta here
+
+		// x = cos(theta) and y = sin(theta) would give you a horizontal half circle.
+		// 				  .
+		// horizontal .	      .
+		// but since we are generating triangle strips and need to be rotating this half circle differently,
+		// you would reverse it to orient the half circle vertically.
+		// 				.
+		//				   .
+		// vertically 	.
+		// to be correctly oriented with how we want to draw the triangle strips.		
+
+
+	}
+	//return the array of the points that make up the half circle
+	return halfCircle;
+}
+std::vector<glm::vec4> rotatePoints(std::vector<glm::vec4> points, unsigned int numOfMeridians)
+{
+	// will be used to store enitre sphere to be returned
+	std::vector<glm::vec4> wholeSphere;
+
+	// loop per meridian
+	for (int i = 0; i <= numOfMeridians; i++)
+	{
+		// calculate slice		
+		float slice = ? ;
+
+		// calculate phi		
+		float phi = ? ;
+
+		// loop per point
+		for (int j = 0; j < points.size(); j++)
+		{
+
+			// calculate each new value of the new vec4
+			// you need to figure out the math for each point 
+			float newX = ? ;
+			float newY = ? ;
+			float newZ = ? ;
+			float newW = ? ;
+
+			// push new vec4 onto list of points that make up entire sphere
+			wholeSphere.push_back(glm::vec4(newX, newY, newZ, newW));
+		}
+	}
+	// return the array of points that make up the entire sphere
+	return wholeSphere;
+}
+std::vector<unsigned int> RenderGeometryApp::genIndicesTriStrip(unsigned int nm, unsigned int np)
+{
+	// create array of unsigned ints to store the index information
+	std::vector<unsigned int> indices;
+
+	unsigned int start;
+	unsigned int botLeft;
+	unsigned int botRight;
+
+	// loop for number of meridans
+	for (int i = 0; i < nm; i++)
+	{
+		start = ? ;
+
+		// loop for number of points
+		for (int j = 0; j < np; j++)
+		{
+			botLeft = ? ;
+			botRight = ? ;
+			indices.push_back(botLeft);
+			indices.push_back(botRight);
+		}
+		indices.push_back(0xFFFF);
+	}
+
+	// return array of indices in order to be drawn
+	return indices;
+}
 RenderingGeometryApp::RenderingGeometryApp()
 {
 }
